@@ -1,0 +1,45 @@
+<project name="javaee" default="build" basedir=".">
+    
+    <!-- Propriedades do projeto -->
+    <property name="src.dir" value="src" />
+    <property name="build.dir" value="build" />
+    <property name="web.dir" value="WebContent" />
+    <property name="classes.dir" value="${build.dir}/WEB-INF/classes" />
+    <property name="lib.dir" value="${build.dir}/WEB-INF/lib" />
+    <property name="includeantruntime" value="false" />
+    
+    
+    <!-- Tarefa de compilação -->
+    <target name="compile">
+        <mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" />
+    </target>
+    
+    <!-- Tarefa de cópia de arquivos -->
+    <target name="copy" depends="compile">
+        <mkdir dir="${lib.dir}" />
+        <copy todir="${classes.dir}">
+            <fileset dir="${src.dir}">
+                <include name="**/*.xml" />
+            </fileset>
+        </copy>
+        <copy todir="${lib.dir}">
+            <fileset dir="${web.dir}/WEB-INF/lib">
+                <include name="*.jar" />
+            </fileset>
+        </copy>
+    </target>
+    
+    <!-- Tarefa de criação do arquivo WAR -->
+    <target name="war" depends="copy">
+        <war destfile="${build.dir}/MeuProjeto.war" webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}" />
+        </war>
+    </target>
+    
+    <!-- Tarefa principal de build -->
+    <target name="build" depends="war">
+        <echo message="Build concluído!" />
+    </target>
+    
+</project>
