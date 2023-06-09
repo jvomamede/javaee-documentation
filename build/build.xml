@@ -32,7 +32,7 @@
     
     <!-- Tarefa de criação do arquivo WAR -->
     <target name="war" depends="copy">
-        <war destfile="${build.dir}/MeuProjeto.war" webxml="${web.dir}/WEB-INF/web.xml">
+        <war destfile="${build.dir}/javaee.jar" webxml="${web.dir}/WEB-INF/web.xml">
             <fileset dir="${web.dir}" />
         </war>
     </target>

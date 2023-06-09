@@ -5,11 +5,15 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>FirstServlet</servlet-name>
-  	<servlet-class>gettinstarterservlet.First</servlet-class>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>gettinstarterservlet.First</servlet-class>
+    <init-param>
+      <param-name>initalized</param-name>
+      <param-value>Inicialização</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>FirstServlet</servlet-name>
-  	<url-pattern>/first</url-pattern>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/first</url-pattern>
   </servlet-mapping>
 </web-app>
