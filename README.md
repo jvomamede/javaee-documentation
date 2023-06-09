@@ -27,7 +27,8 @@ you will need:
 	</module>
   ```
 - Fifth: in your directory of wildfly 9, inside `standalone -> configuration`, open `standalone.xml`, and at tag `datasources` create a new `datasource` wiht code: <br>
-    ```<datasource jndi-name="java:jboss/datasources/MySQLDS"                   pool-name="MySQLDS" enabled="true" use-java-context="true">
+    ```
+    <datasource jndi-name="java:jboss/datasources/MySQLDS"                   pool-name="MySQLDS" enabled="true" use-java-context="true">
         <connection-url>jdbc:mysql://localhost:3306/dbjavaee</connection-url>
         <driver>mysql</driver>
         <security>
