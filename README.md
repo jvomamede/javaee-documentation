@@ -13,8 +13,8 @@ you will need:
 - First: Create this folder in `modules` directory: com -> mysql -> main
 - Secound: Copy your driver mysql and paste in `main` folder. 
 - Third: Create file with name - `module.xml`
-- Fourthy: Copy this code down and paste on `module.xml`:
-  ``<?xml version="1.0" encoding="UTF-8"?>
+- Fourthy: Copy this code down and paste on `module.xml`:<br>
+  <code><?xml version="1.0" encoding="UTF-8"?>
 	<module xmlns="urn:jboss:module:1.3" name="com.mysql">
 	    <resources>
 	        <resource-root path="mysql-connector-java-8.0.30.jar"/>
@@ -24,9 +24,9 @@ you will need:
 	        <module name="javax.transaction.api"/>
 	    </dependencies>
 	</module>
-  ``
-- Fifth: in your directory of wildfly 9, inside `standalone -> configuration`, open `standalone.xml`, and at tag `datasources` create a new `datasource` wiht code:
-`` <datasource jndi-name="java:jboss/datasources/MySQLDS" pool-name="MySQLDS" enabled="true" use-java-context="true">
+  </code>
+- Fifth: in your directory of wildfly 9, inside `standalone -> configuration`, open `standalone.xml`, and at tag `datasources` create a new `datasource` wiht code:<br>
+<code><datasource jndi-name="java:jboss/datasources/MySQLDS" pool-name="MySQLDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:mysql://localhost:3306/dbjavaee</connection-url>
                     <driver>mysql</driver>
                     <security>
@@ -34,17 +34,17 @@ you will need:
                         <password>root</password>
                     </security>
                 </datasource>
-                ``
-- Sixth: Maybe on `standalone.xml` at tag `drivers` down `datasources`, you add a new driver with code:
-`` <driver name="mysql" module="com.mysql">
+                </code>
+- Sixth: Maybe on `standalone.xml` at tag `drivers` down `datasources`, you add a new driver with code:<br>
+<code> <driver name="mysql" module="com.mysql">
                         <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
-                    </driver>`` 
+                    </driver></code>
                     
 ### Configuration JPA in your project
 - First: Add all libs in `lib` folder inside `WEB-INF` directory. 
 - Second: Add driver mysql in `lib` too
-- Trith: Create a `persistence.xml` inside `WEB-INF -> classes -> META-INF` with code:
-`` <?xml version="1.0" encoding="UTF-8"?>
+- Trith: Create a `persistence.xml` inside `WEB-INF -> classes -> META-INF` with code:<br>
+<code><?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
@@ -59,7 +59,7 @@ you will need:
             <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
-</persistence>``
+</persistence></code>
 - Fourth: Create a class Entity
   
   
