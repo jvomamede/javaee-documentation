@@ -37,7 +37,7 @@ you will need:
         </security>
     </datasource>
     ```
-- Sixth: Maybe on `standalone.xml` at tag `drivers` down `datasources`, you add a new driver with code: <br>
+- Sixth: Again on `standalone.xml` at tag `drivers` down `datasources`, you add a new driver with code: <br>
     ```
     <driver name="mysql" module="com.mysql">
         <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
