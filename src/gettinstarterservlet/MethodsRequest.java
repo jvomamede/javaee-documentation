@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/MethodRequest")
-public class MethodRequest extends HttpServlet {
+@WebServlet("/MethodsRequest")
+public class MethodsRequest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public MethodRequest() {
+	public MethodsRequest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

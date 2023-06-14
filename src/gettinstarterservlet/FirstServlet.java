@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet
-public class First extends HttpServlet {
+public class FirstServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -22,10 +22,8 @@ public class First extends HttpServlet {
 		super.init();
 		String ini = this.getInitParameter("initalized");
 		
-		this.log(ini);
+		this.log("Parametro de Inicialização: " + ini);
 		
-		String dirImages = this.getInitParameter("dir-images");
-		this.log(dirImages);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
